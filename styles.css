@@ -1,0 +1,149 @@
+@font-face {
+    font-family: 'handwriting';
+    src: url('fonts/futurahandwritten/FuturaHandwritten.ttf') format('truetype');
+}
+
+@keyframes backgroundShift {
+    0% { background-color: #001946; }
+    33% { background-color: #011e4d; }
+    66% { background-color: #011c4c; }
+    100% { background-color: #001946; }
+}
+
+body {
+    font-family: 'handwriting';
+    background-color: #001946;
+    animation: backgroundShift 8s ease-in-out infinite;
+    color: #F8F6F0;
+    margin: 0;
+}
+
+.header {
+    margin: 3rem 0;
+    text-align: center;
+}
+.header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.header p {
+    width: 50%;
+    font-size: 1.3rem;
+    margin: 0 auto;
+}
+
+span {
+    color: #108DCB ;
+    font-weight: 900;
+    text-decoration: wavy underline ;
+}
+
+img {
+    display: inline-block;
+    margin: 0 auto;
+    width: 120px;
+    height: auto;
+    position: relative;
+    cursor: pointer;
+    border: 3px solid transparent;
+    border-radius: 10px;
+    transition: border-color 0.3s ease;
+}
+
+.zodiac-signs img:hover {
+    border-color: #419FDB;
+    box-shadow: 0 4px 8px rgba(74, 144, 226, 0.3);
+}
+
+.zodiac-signs img.selected {
+    border-color: #419FDB;
+    box-shadow: 0 4px 12px rgba(65, 159, 219, 0.5);
+}
+
+.zodiac-signs {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin: 2rem 10rem 2rem 10rem;
+}
+
+.crystal-result-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 3rem;
+    margin: 3rem 2rem;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.crystal-ball-section {
+    flex: 0 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 300px;
+    height: 300px;
+}
+
+.horoscope-section {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 200px;
+}
+
+#crystal-ball {
+    width: 200px;
+    height: auto;
+    cursor: pointer;
+    transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+#crystal-ball:hover {
+    transform: scale(1.05);
+    filter: brightness(1.1);
+}
+
+#crystal-ball:active {
+    transform: scale(0.98);
+}
+
+#horoscope-result {
+    text-align: center;
+    font-size: 18px;
+    padding: 20px;
+    background-color: #FAF9F6;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    min-height: 150px;
+    line-height: 1;
+    width: 100%;
+    max-width: 500px;
+    color: #333;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 768px) {
+    .crystal-result-container {
+        flex-direction: column;
+        gap: 2rem;
+        margin: 2rem 1rem;
+    }
+    
+    .horoscope-section {
+        min-height: 150px;
+    }
+    
+    #horoscope-result {
+        max-width: 100%;
+    }
+}
