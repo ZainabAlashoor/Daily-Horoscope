@@ -1,4 +1,4 @@
-// Horoscope data for each zodiac sign
+// Horoscope data: 
 const horoscopes = {
     'Aquarius': [
         "Your water bottle will mysteriously refill itself today. Scientists hate this one weird trick!",
@@ -185,7 +185,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // Add click event listener to crystal ball
+    // Add event listener to the crystal ball
     const crystalBall = document.getElementById('crystal-ball');
     crystalBall.addEventListener('click', function() {
         showHoroscope();
@@ -197,17 +197,14 @@ function selectZodiacSign(signId, imgElement) {
     const allImages = document.querySelectorAll('.zodiac-signs img');
     allImages.forEach(img => img.classList.remove('selected'));
     
-    // Add selected class to clicked image
     imgElement.classList.add('selected');
-    
-    // Store the selected sign
     selectedSign = signId;
     
-    // Reset crystal ball to original image
+    // Reset the crystal ball to the original image
     const crystalBall = document.getElementById('crystal-ball');
     crystalBall.src = 'img/crystal-ball1.png';
     
-    // Clear previous horoscope result
+    // Clear the previous horoscope result
     document.getElementById('horoscope-result').textContent = '';
     
     console.log('Selected sign:', selectedSign);
@@ -231,7 +228,7 @@ function showHoroscope() {
     const randomIndex = Math.floor(Math.random() * signHoroscopes.length);
     const selectedHoroscope = signHoroscopes[randomIndex];
     
-    // Display the horoscope with a nice animation effect
+    // Display the horoscope
     horoscopeResult.style.color = '#333';
     horoscopeResult.innerHTML = `
         <strong>${selectedSign}</strong><br><br>
